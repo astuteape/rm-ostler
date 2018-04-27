@@ -29,3 +29,19 @@
 * Navigation
   * Top bar navigation
   * Simple, underlined
+
+## Services Outline
+
+* All media (photos, copy, logo, etc.) provided or reimbursed by Rosemarie
+* Web design and development
+* Site deployment
+* Basic site testing and QA
+
+- Books -> onclick modal with details, reviews, links to purchase.
+- Articles -> similar to books but link to full article.
+- Navbar links change back after hover event.
+
+- TODO
+  * Send font pairings
+  * Receive assets from Rosemarie
+  * Think through mockups
