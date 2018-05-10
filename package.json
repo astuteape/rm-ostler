@@ -1,0 +1,38 @@
+{
+  "name": "rm-ostler",
+  "version": "1.0.0",
+  "description": "Rosemarie Ostler's Personal Website",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astuteape/rm-ostler.git"
+  },
+  "keywords": [
+    "Author",
+    "Books",
+    "Website"
+  ],
+  "author": "Wade Christensen",
+  "license": "SEE LICENSE IN License.md",
+  "bugs": {
+    "url": "https://github.com/astuteape/rm-ostler/issues"
+  },
+  "homepage": "https://github.com/astuteape/rm-ostler#readme",
+  "devDependencies": {
+    "bourbon": "^5.0.0",
+    "bourbon-neat": "^1.9.0",
+    "css-loader": "^0.28.11",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3"
+  }
+}
