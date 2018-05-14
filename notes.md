@@ -43,5 +43,6 @@
 
 - TODO
   * Send font pairings
+   * [Font List](https://fonts.google.com/selection?selection.family=Kaushan+Script|Lato|Montserrat|Oleo+Script|Oleo+Script+Swash+Caps|Open+Sans|Poppins)
   * Receive assets from Rosemarie
   * Think through mockups
