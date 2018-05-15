@@ -5,17 +5,14 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --opmtimize-minimize"
+    "build": "webpack --opmtimize-minimize",
+    "dev": "webpack --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/astuteape/rm-ostler.git"
   },
-  "keywords": [
-    "Author",
-    "Books",
-    "Website"
-  ],
+  "keywords": ["Author", "Books", "Website"],
   "author": "Wade Christensen",
   "license": "SEE LICENSE IN License.md",
   "bugs": {
