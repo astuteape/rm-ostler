@@ -1,0 +1,19 @@
+@import "_mixins.scss";
+
+body {
+  background: rgb(0, 207, 207);
+  font-family: sans-serif;
+}
+
+/* Heading Styles
+=========================================================== */
+@include header-size(3em, 0.75);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
