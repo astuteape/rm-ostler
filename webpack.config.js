@@ -2,8 +2,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.ts",
-  mode: "production",
+  context: path.resolve(__dirname, "src"),
+  entry: "./index.ts",
+  mode: "development",
   devtool: "inline-source-map",
   module: {
     rules: [
@@ -13,41 +14,34 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           // fallback to style-loader in development
-          MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV !== "production"
+            ? "style-loader"
+            : MiniCssExtractPlugin.loader,
           "css-loader",
           "sass-loader"
         ]
       }
     ]
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: "styles",
-          test: /\.css$/,
-          chunks: "all",
-          enforce: true
-        }
-      }
-    }
-  },
   plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "[name].css",
+      filename: "index.css",
       chunkFilename: "[id].css"
     })
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
   },
+  performance: {
+    hints: false
+  },
   output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    filename: "./index.js"
   }
 };
