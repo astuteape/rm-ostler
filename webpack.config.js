@@ -1,5 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const bourbon = require("bourbon");
+const neat = require("bourbon-neat");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -25,6 +27,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [bourbon, neat]
   },
   plugins: [
     new MiniCssExtractPlugin({
