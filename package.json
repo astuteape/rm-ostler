@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/astuteape/rm-ostler.git"
   },
-  "keywords": ["Author", "Books", "Website"],
+  "keywords": [
+    "Author",
+    "Books",
+    "Website"
+  ],
   "author": "Wade Christensen",
   "license": "SEE LICENSE IN License.md",
   "bugs": {
@@ -21,7 +25,7 @@
   "homepage": "https://github.com/astuteape/rm-ostler#readme",
   "devDependencies": {
     "bourbon": "^5.0.0",
-    "bourbon-neat": "^1.9.0",
+    "bourbon-neat": "^2.1.0",
     "css-loader": "^0.28.11",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
