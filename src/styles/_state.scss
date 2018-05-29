@@ -1,0 +1,15 @@
+// Describe layout and modules in various states (e.g. hidden, expanded, etc.)
+@import "_defaults.scss";
+
+// Links
+a:visited {
+  color: $link-base-color;
+}
+
+a:hover {
+  color: $link-base-color;
+}
+
+a:active {
+  color: $link-base-color;
+}

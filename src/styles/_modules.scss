@@ -1,0 +1,7 @@
+// Reusable, modular (e.g. callouts, sidebars, products lists, etc.)
+@import "_defaults.scss";
+
+.navbar-top {
+  background: $navbar-bg-color;
+  color: $text-color-inverse;
+}

@@ -1,7 +1,10 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+
+// Styles
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const bourbon = require("bourbon");
 const neat = require("bourbon-neat");
+const StyleLintPlugin = require("stylelint-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -26,6 +29,7 @@ module.exports = {
                 : MiniCssExtractPlugin.loader
           },
           { loader: "css-loader" },
+          { loader: "postcss-loader" },
           {
             loader: "sass-loader",
             options: {
@@ -42,7 +46,8 @@ module.exports = {
       // both options are optional
       filename: "index.css",
       chunkFilename: "[id].css"
-    })
+    }),
+    new StyleLintPlugin(path.resolve(__filename, ".stylelintrc.json"))
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
