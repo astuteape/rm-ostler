@@ -19,17 +19,22 @@ module.exports = {
         test: /\.s?css$/,
         use: [
           // fallback to style-loader in development
-          process.env.NODE_ENV !== "production"
-            ? "style-loader"
-            : MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
+          {
+            loader:
+              process.env.NODE_ENV !== "production"
+                ? "style-loader"
+                : MiniCssExtractPlugin.loader
+          },
+          { loader: "css-loader" },
+          {
+            loader: "sass-loader",
+            options: {
+              includePaths: [bourbon, neat]
+            }
+          }
         ]
       }
     ]
-  },
-  sassLoader: {
-    includePaths: [bourbon, neat]
   },
   plugins: [
     new MiniCssExtractPlugin({
