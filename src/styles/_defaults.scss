@@ -1,17 +1,149 @@
-// Defaults/resets
+// === Defaults/resets === //
 
-// Color variables
-$link-base-color: #31e3e9;
-$navbar-bg-color: #000;
-$text-color: #000;
-$text-color-inverse: #fff;
+$base-font-size: 18px;
 
-html {
-  background: #fff;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: $base-font-size;
+  -ms-text-size-adjust: 100%; //iOS font-size fix
+  -webkit-text-size-adjust: 100%; //iOS font-size fix
+  background-color: #fff;
+}
+
+// HTML5 display reset
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+// === STANDARD ELEMENT RESETS === //
+a:link {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+fieldset {
+  border: 1px solid #000;
+  margin: 2px;
+  padding: 1px;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
 }
 
 img {
-  max-width: 250px;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
   height: auto;
-  border: 1px #000 solid;
+  border: none;
 }
+
+// === TEXT AND FONT RULES === //
+b,
+strong {
+  font-weight: bold;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+dfn,
+em {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ffff00;
+  color: #000;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: $base-font-size;
+}
+
+$heading-font-stack: "Kaushan Script", cursive;
+$body-font-stack: "Pavanam", sans-serif;
+
+@mixin heading-size($base-heading-size, $factor) {
+  h1 {
+    font: $base-heading-size $heading-font-stack;
+  }
+  @for $heading from 2 through 6 {
+    $base-heading-size: $base-heading-size * $factor;
+    h#{$heading} {
+      font: $base-heading-size $heading-font-stack;
+    }
+  }
+}
+
+body {
+  font-size: 18px;
+  @include heading-size(3em, 0.8);
+  font-family: $body-font-stack;
+}
+
+//=== COLOR RULES === //
+// Color blocks
+// Main navigation pages
+$home-block: #bbdee3;
+$about-block: #fff;
+$clips-block: #fff;
+
+// Book detail pages
+$splendiferous-block: $home-block;
+$founding-grammars-block: #a65e13;
+$slinging-mud-block: #906d99;
+$talk-turkey-block: #078cb0;
+$dewdroppers-block: #aa6e6d;
+
+// Link colors
+$link-base-color: #4b84ff;
+$navbar-bg-color: #000;
+$text-color: #000;
+$text-color-inverse: #fff;
