@@ -1,6 +1,6 @@
 // === Defaults/resets === //
 
-$base-font-size: 18px;
+$base-font-size: 16px;
 
 html,
 body {
@@ -103,7 +103,7 @@ mark {
 
 p {
   margin: 0;
-  padding: 0;
+  padding: 1em 0;
   font-size: $base-font-size;
 }
 
@@ -135,6 +135,10 @@ $home-block: #bbdee3;
 $about-block: #fff;
 $clips-block: #fff;
 
+// Main theme colors
+$border-color: rgba(120, 120, 120, 0.66);
+$border-color-dark: #000;
+
 // Book detail pages
 $splendiferous-block: $home-block;
 $founding-grammars-block: #a65e13;
@@ -144,6 +148,19 @@ $dewdroppers-block: #aa6e6d;
 
 // Link colors
 $link-base-color: #4b84ff;
-$navbar-bg-color: #000;
+$link-hover-color: #000;
+$link-active-color: #000;
+
+// Text colors
 $text-color: #000;
 $text-color-inverse: #fff;
+
+// Nav link colors
+$nav-link-base-color: #000;
+$nav-link-hover-color: rgb(115, 115, 115);
+$nav-link-active-color: rgb(115, 115, 115);
+
+// Social colors
+$linkedin-blue: #0077b5;
+$twitter-blue: #1da1f2;
+$goodreads-tan: #f2f0e4;

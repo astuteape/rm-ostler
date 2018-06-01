@@ -4,3 +4,125 @@
 // TODO fix these import paths
 @import "/Users/wade/Development/rm-ostler/node_modules/bourbon/core/bourbon";
 @import "/Users/wade/Development/rm-ostler/node_modules/bourbon-neat/core/neat";
+
+$neat-grid: (
+  columns: 12,
+  gutter: 20px
+);
+
+$neat-sm-grid: (
+  media: "(max-width: 768px)",
+  columns: 2,
+  gutter: 5px
+);
+
+$neat-md-grid: (
+  media: "(max-width: 1024px)",
+  columns: 6,
+  gutter: 10px
+);
+
+/* === NAVBAR === //*/
+.navbar-top {
+  @include grid-container;
+  @include grid-collapse;
+  border-bottom: 1px solid $border-color;
+}
+
+.navbar-top .navbar-pages {
+  @include grid-column(4);
+  @include grid-push(1);
+
+  li {
+    @include grid-column(1 of 4);
+    padding: 0.5em 0;
+    font-family: $heading-font-stack;
+  }
+
+  li > a {
+    color: $nav-link-base-color;
+  }
+}
+
+.navbar-top .navbar-social {
+  @include grid-column(3);
+  @include grid-push(4);
+
+  li {
+    @include grid-column(1 of 3);
+    text-align: center;
+    margin: 0 !important;
+    padding: 0.5em 0;
+    border-left: 1px solid $border-color;
+  }
+  li:last-child {
+    border-right: 1px solid $border-color;
+  }
+}
+
+// === MAIN CONTENT === //
+.main-content {
+  @include grid-container;
+  height: 100vh;
+  //   @include grid-visual;
+}
+
+.page-title {
+  @include grid-container;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.content-container {
+  @include grid-container;
+  @include grid-collapse;
+}
+
+.book-image-container {
+  @include grid-column(4);
+  @include grid-shift(1);
+  position: relative;
+  text-align: right;
+  margin-top: 1em;
+  z-index: 100;
+
+  @include grid-media($neat-sm-grid) {
+    @include grid-collapse;
+    @include grid-column(2);
+    text-align: center;
+  }
+}
+
+.color-block {
+  @include grid-column(8);
+  background-color: $home-block;
+
+  @include grid-media($neat-sm-grid) {
+    @include grid-collapse;
+    @include grid-column(2);
+  }
+}
+
+.main-text {
+  @include grid-column(6 of 8);
+  @include grid-push(2);
+  @include grid-media($neat-sm-grid) {
+    padding-top: 200px;
+  }
+}
+
+.main-purchase-links {
+  @include grid-column(8);
+  @include grid-push(4);
+  text-align: center;
+}
+
+// === FOOTER === //
+footer {
+  @include grid-container;
+  @include grid-column(12);
+  padding: 0.5em;
+  font-family: $heading-font-stack;
+  text-align: center;
+  border-top: 1px solid $border-color;
+}

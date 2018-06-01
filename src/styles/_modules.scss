@@ -1,2 +1,9 @@
 // Reusable, modular (e.g. callouts, sidebars, products lists, etc.)
-@import "_defaults.scss";
+
+.book-image {
+  max-width: 200px;
+  height: auto;
+  border: 2px solid black;
+  box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.45);
+  mix-blend-mode: color-burn;
+}
