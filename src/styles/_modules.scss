@@ -1,9 +1,53 @@
 // Reusable, modular (e.g. callouts, sidebars, products lists, etc.)
 
-.book-image {
+.main-book-image-container {
+  @include grid-column(4);
+  @include grid-shift(1);
+  position: relative;
+  text-align: right;
+  margin-top: 1em;
+  z-index: 100;
+
+  @include grid-media($neat-grid-small) {
+    @include grid-column(2);
+    @include grid-shift(0);
+    @include grid-collapse;
+    margin-bottom: -150px;
+    text-align: center;
+  }
+}
+
+.main-book-image {
+  width: 100%;
   max-width: 200px;
   height: auto;
   border: 2px solid black;
   box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.45);
   mix-blend-mode: color-burn;
+}
+
+.main-color-block {
+  @include grid-column(8);
+  background-color: $home-block;
+
+  @include grid-media($neat-grid-small) {
+    @include grid-collapse;
+    @include grid-column(2);
+  }
+}
+
+.main-text-block {
+  @include grid-collapse;
+  @include grid-column(6 of 8);
+  @include grid-push(2);
+
+  @include grid-media($neat-grid-small) {
+    padding-top: 150px;
+  }
+}
+
+.main-purchase-links {
+  @include grid-column(8);
+  @include grid-push(4);
+  text-align: center;
 }

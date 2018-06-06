@@ -10,33 +10,64 @@ $neat-grid: (
   gutter: 20px
 );
 
-$neat-sm-grid: (
+$neat-grid-small: (
   media: "(max-width: 768px)",
   columns: 2,
   gutter: 5px
 );
 
-$neat-md-grid: (
+$neat-grid-medium: (
   media: "(max-width: 1024px)",
   columns: 6,
   gutter: 10px
 );
 
-/* === NAVBAR === //*/
+/* === HEADER SECTION */
+/* === NAVBAR === */
 .navbar-top {
-  @include grid-container;
-  @include grid-collapse;
+  overflow: hidden;
   border-bottom: 1px solid $border-color;
+  font-family: $heading-font-stack;
+
+  .nav-mobile-menu {
+    display: none;
+  }
+
+  @include grid-media($neat-grid-medium) {
+    .nav-mobile-menu {
+      display: block;
+      width: 100%;
+      min-height: 2em;
+      text-align: left;
+      background: #000;
+      color: #fff;
+      padding: 0.5em;
+      font-size: 1em;
+    }
+  }
 }
 
 .navbar-top .navbar-pages {
-  @include grid-column(4);
-  @include grid-push(1);
+  float: left;
+  padding-left: 5em;
+
+  @include grid-media($neat-grid-medium) {
+    width: 100%;
+    padding: 0;
+  }
 
   li {
-    @include grid-column(1 of 4);
-    padding: 0.5em 0;
-    font-family: $heading-font-stack;
+    float: left;
+    position: relative;
+    padding: 0.75em 1.5em;
+
+    @include grid-media($neat-grid-medium) {
+      float: none;
+      width: 100%;
+      text-align: left;
+      padding: 0.5em;
+      border-bottom: 1px solid $border-color;
+    }
   }
 
   li > a {
@@ -45,26 +76,38 @@ $neat-md-grid: (
 }
 
 .navbar-top .navbar-social {
-  @include grid-column(3);
-  @include grid-push(4);
+  float: right;
 
   li {
-    @include grid-column(1 of 3);
-    text-align: center;
-    margin: 0 !important;
-    padding: 0.5em 0;
+    float: left;
+    position: relative;
+    padding: 1em;
+    max-width: 24px;
+    max-height: 24px;
     border-left: 1px solid $border-color;
   }
-  li:last-child {
-    border-right: 1px solid $border-color;
+
+  @include grid-media($neat-grid-medium) {
+    float: left;
+
+    li {
+      float: left;
+      display: block;
+      max-width: 24px;
+      max-height: 24px;
+      border: none;
+    }
   }
 }
 
-// === MAIN CONTENT === //
-.main-content {
-  @include grid-container;
-  height: 100vh;
-  //   @include grid-visual;
+.nav-link-container {
+  transition: all 0.5s linear;
+}
+
+// Mobile nav
+.nav-mobile-collapsed {
+  transform: scale(0);
+  transform-origin: left;
 }
 
 .page-title {
@@ -73,55 +116,27 @@ $neat-md-grid: (
   text-align: center;
 }
 
-.content-container {
+// === MAIN CONTENT === //
+.main-content {
+  @include grid-container;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.main-content-row {
   @include grid-container;
   @include grid-collapse;
-}
-
-.book-image-container {
-  @include grid-column(4);
-  @include grid-shift(1);
-  position: relative;
-  text-align: right;
-  margin-top: 1em;
-  z-index: 100;
-
-  @include grid-media($neat-sm-grid) {
-    @include grid-collapse;
-    @include grid-column(2);
-    text-align: center;
-  }
-}
-
-.color-block {
-  @include grid-column(8);
-  background-color: $home-block;
-
-  @include grid-media($neat-sm-grid) {
-    @include grid-collapse;
-    @include grid-column(2);
-  }
-}
-
-.main-text {
-  @include grid-column(6 of 8);
-  @include grid-push(2);
-  @include grid-media($neat-sm-grid) {
-    padding-top: 200px;
-  }
-}
-
-.main-purchase-links {
-  @include grid-column(8);
-  @include grid-push(4);
-  text-align: center;
+  padding-bottom: 50px;
 }
 
 // === FOOTER === //
 footer {
   @include grid-container;
   @include grid-column(12);
-  padding: 0.5em;
+  padding: 0.5em 0;
+  height: 50px;
+  margin-top: -50px;
   font-family: $heading-font-stack;
   text-align: center;
   border-top: 1px solid $border-color;
