@@ -7,11 +7,9 @@ const navMobileButton = document.getElementById("nav-mobile-menu");
 const navLinkContainer = document.getElementById("nav-link-container");
 
 navMobileButton.addEventListener("click", () => {
-  if (navLinkContainer.classList.contains("nav-is-expanded")) {
-    navLinkContainer.classList.remove("nav-is-expanded");
-  } else {
-    navLinkContainer.classList.add("nav-is-expanded");
-  }
+  navLinkContainer.classList.contains("nav-is-expanded")
+    ? navLinkContainer.classList.remove("nav-is-expanded")
+    : navLinkContainer.classList.add("nav-is-expanded");
 });
 
 // Copyright date

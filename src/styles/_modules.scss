@@ -53,9 +53,9 @@
   position: relative;
   float: left;
   width: 100%;
-  text-align: left;
   padding: 0.5em;
   border-bottom: 1px solid $border-color;
+  text-align: left;
 
   & a {
     color: $nav-link-base-color;
@@ -95,25 +95,36 @@
   max-width: 24px;
   max-height: 24px;
 
-  & a > img {
-    max-width: 24px;
-    max-height: 24px;
+  & a > svg {
+    fill: $theme-darkest;
   }
 
   &.linkedin:hover {
     background: $linkedin-blue;
+
+    svg {
+      fill: $theme-lightest;
+    }
   }
 
   &.twitter:hover {
     background: $twitter-blue;
+
+    svg {
+      fill: $theme-lightest;
+    }
   }
 
   &.goodreads:hover {
-    background: $goodreads-tan;
+    background: $goodreads-brown;
+
+    svg {
+      fill: $theme-lightest;
+    }
   }
 
   @include grid-media($neat-grid-large) {
-    float: right;
+    float: left;
     border-left: 1px solid $border-color;
   }
 }
