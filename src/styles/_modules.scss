@@ -126,54 +126,67 @@
 }
 /* === END HEADER MODULES === */
 
+/* === MAIN CONTENT MODULES === */
 .main-book-image-container {
   @include grid-collapse;
   @include grid-column(2);
-  margin-bottom: -150px;
+  position: relative;
+  margin-bottom: -8em;
   text-align: center;
 
-  @include grid-media($neat-grid-medium) {
+  @include grid-media($neat-grid-xlarge) {
     @include grid-column(4);
     @include grid-shift(1);
-    position: relative;
     text-align: right;
-    margin-top: 1em;
-    z-index: 100;
+    margin-top: 2.5em;
   }
 }
 
 .main-book-image {
-  width: 100%;
   max-width: 200px;
   height: auto;
-  border: 2px solid black;
+  border: 2px double black;
   box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.45);
-  mix-blend-mode: color-burn;
 }
 
 .main-color-block {
   @include grid-collapse;
   @include grid-column(2);
+  background-color: $home-block;
 
-  @include grid-media($neat-grid-medium) {
+  @include grid-media($neat-grid-xlarge) {
     @include grid-column(8);
-    background-color: $home-block;
   }
 }
 
 .main-text-block {
-  @include grid-collapse;
-  @include grid-column(2);
-  padding-top: 150px;
+  @include grid-column(1.5 of 2);
+  @include grid-push(0.25 of 2);
+  padding: 150px 0 2.5em 0;
 
-  @include grid-media($neat-grid-medium) {
+  @include grid-media($neat-grid-xlarge) {
     @include grid-column(6 of 8);
     @include grid-push(2);
+    padding: 0;
   }
 }
 
-.main-purchase-links {
-  @include grid-column(8);
-  @include grid-push(4);
+.main-text-block h2 {
   text-align: center;
+  margin-bottom: 0.25em;
+}
+
+.main-purchase-links {
+  @include grid-column(2);
+  text-align: center;
+
+  @include grid-media($neat-grid-xlarge) {
+    @include grid-column(8);
+    @include grid-push(4);
+  }
+}
+
+/* === FOOTER MODULES === */
+.copyright {
+  color: $theme-lightest;
 }
