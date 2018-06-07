@@ -1,19 +1,144 @@
 // Reusable, modular (e.g. callouts, sidebars, products lists, etc.)
 
-.main-book-image-container {
-  @include grid-column(4);
-  @include grid-shift(1);
-  position: relative;
-  text-align: right;
-  margin-top: 1em;
-  z-index: 100;
+/* === MODULES IN HEADER SECTION === */
+/* === NAVBAR === */
+.navbar-top {
+  overflow: hidden;
+  border-bottom: none;
+  font-family: $heading-font-stack;
 
-  @include grid-media($neat-grid-small) {
-    @include grid-column(2);
-    @include grid-shift(0);
-    @include grid-collapse;
-    margin-bottom: -150px;
-    text-align: center;
+  @include grid-media($neat-grid-large) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.nav-mobile-menu {
+  display: block;
+  width: 100%;
+  height: 2em;
+  padding: 0.5em;
+  border-bottom: none !important;
+  background: $theme-darkest;
+  color: $theme-lightest;
+  text-align: left;
+  font-size: 1em;
+
+  @include grid-media($neat-grid-large) {
+    display: none;
+  }
+}
+
+.nav-link-container {
+  display: none;
+  border-bottom: 1px solid $border-color;
+
+  @include grid-media($neat-grid-large) {
+    display: block;
+    border-bottom: none;
+  }
+}
+
+.navbar-pages {
+  width: 100%;
+  padding: 0;
+
+  @include grid-media($neat-grid-large) {
+    float: left;
+    width: auto;
+    padding-left: 5em;
+  }
+}
+
+.navbar-pages li {
+  position: relative;
+  float: left;
+  width: 100%;
+  text-align: left;
+  padding: 0.5em;
+  border-bottom: 1px solid $border-color;
+
+  & a {
+    color: $nav-link-base-color;
+  }
+
+  & a:hover {
+    color: $nav-link-hover-color;
+  }
+  & a:active {
+    color: $nav-link-active-color;
+  }
+
+  @include grid-media($neat-grid-large) {
+    width: auto;
+    padding: 0.75em 1.5em;
+    border-bottom: none;
+  }
+}
+
+.navbar-social {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+
+  @include grid-media($neat-grid-large) {
+    float: right;
+    width: auto;
+    border-bottom: none;
+  }
+}
+
+.navbar-social li {
+  display: block;
+  float: left;
+  position: relative;
+  padding: 1em;
+  max-width: 24px;
+  max-height: 24px;
+
+  & a > img {
+    max-width: 24px;
+    max-height: 24px;
+  }
+
+  &.linkedin:hover {
+    background: $linkedin-blue;
+  }
+
+  &.twitter:hover {
+    background: $twitter-blue;
+  }
+
+  &.goodreads:hover {
+    background: $goodreads-tan;
+  }
+
+  @include grid-media($neat-grid-large) {
+    float: right;
+    border-left: 1px solid $border-color;
+  }
+}
+/* === END NAV STYLES === */
+
+.page-title {
+  @include grid-container;
+  margin-bottom: 1em;
+  text-align: center;
+}
+/* === END HEADER MODULES === */
+
+.main-book-image-container {
+  @include grid-collapse;
+  @include grid-column(2);
+  margin-bottom: -150px;
+  text-align: center;
+
+  @include grid-media($neat-grid-medium) {
+    @include grid-column(4);
+    @include grid-shift(1);
+    position: relative;
+    text-align: right;
+    margin-top: 1em;
+    z-index: 100;
   }
 }
 
@@ -27,22 +152,23 @@
 }
 
 .main-color-block {
-  @include grid-column(8);
-  background-color: $home-block;
+  @include grid-collapse;
+  @include grid-column(2);
 
-  @include grid-media($neat-grid-small) {
-    @include grid-collapse;
-    @include grid-column(2);
+  @include grid-media($neat-grid-medium) {
+    @include grid-column(8);
+    background-color: $home-block;
   }
 }
 
 .main-text-block {
   @include grid-collapse;
-  @include grid-column(6 of 8);
-  @include grid-push(2);
+  @include grid-column(2);
+  padding-top: 150px;
 
-  @include grid-media($neat-grid-small) {
-    padding-top: 150px;
+  @include grid-media($neat-grid-medium) {
+    @include grid-column(6 of 8);
+    @include grid-push(2);
   }
 }
 

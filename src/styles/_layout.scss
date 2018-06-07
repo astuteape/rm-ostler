@@ -1,120 +1,34 @@
 // Divide the page into sections that hold modules
 // Using Bourbon Neat grid
 
-// TODO fix these import paths
-@import "/Users/wade/Development/rm-ostler/node_modules/bourbon/core/bourbon";
-@import "/Users/wade/Development/rm-ostler/node_modules/bourbon-neat/core/neat";
+@import "../../node_modules/bourbon/core/bourbon";
+@import "../../node_modules/bourbon-neat/core/neat";
 
+// Grids defined mobile first rather than with standard Neat docs examples
 $neat-grid: (
-  columns: 12,
-  gutter: 20px
-);
-
-$neat-grid-small: (
-  media: "(max-width: 768px)",
   columns: 2,
   gutter: 5px
 );
 
 $neat-grid-medium: (
-  media: "(max-width: 1024px)",
+  media: "only screen and (min-width: 600px)",
   columns: 6,
   gutter: 10px
 );
 
-/* === HEADER SECTION */
-/* === NAVBAR === */
-.navbar-top {
-  overflow: hidden;
-  border-bottom: 1px solid $border-color;
-  font-family: $heading-font-stack;
+$neat-grid-large: (
+  media: "only screen and (min-width: 900px)",
+  columns: 6,
+  gutter: 10px
+);
 
-  .nav-mobile-menu {
-    display: none;
-  }
+$neat-grid-xlarge: (
+  media: "only screen and (min-width: 1024px)",
+  columns: 12,
+  gutter: 20px
+);
 
-  @include grid-media($neat-grid-medium) {
-    .nav-mobile-menu {
-      display: block;
-      width: 100%;
-      min-height: 2em;
-      text-align: left;
-      background: #000;
-      color: #fff;
-      padding: 0.5em;
-      font-size: 1em;
-    }
-  }
-}
-
-.navbar-top .navbar-pages {
-  float: left;
-  padding-left: 5em;
-
-  @include grid-media($neat-grid-medium) {
-    width: 100%;
-    padding: 0;
-  }
-
-  li {
-    float: left;
-    position: relative;
-    padding: 0.75em 1.5em;
-
-    @include grid-media($neat-grid-medium) {
-      float: none;
-      width: 100%;
-      text-align: left;
-      padding: 0.5em;
-      border-bottom: 1px solid $border-color;
-    }
-  }
-
-  li > a {
-    color: $nav-link-base-color;
-  }
-}
-
-.navbar-top .navbar-social {
-  float: right;
-
-  li {
-    float: left;
-    position: relative;
-    padding: 1em;
-    max-width: 24px;
-    max-height: 24px;
-    border-left: 1px solid $border-color;
-  }
-
-  @include grid-media($neat-grid-medium) {
-    float: left;
-
-    li {
-      float: left;
-      display: block;
-      max-width: 24px;
-      max-height: 24px;
-      border: none;
-    }
-  }
-}
-
-.nav-link-container {
-  transition: all 0.5s linear;
-}
-
-// Mobile nav
-.nav-mobile-collapsed {
-  transform: scale(0);
-  transform-origin: left;
-}
-
-.page-title {
-  @include grid-container;
-  margin-bottom: 1em;
-  text-align: center;
-}
+/* === HEADER SECTION: ALL RULES IN MODULES */
 
 // === MAIN CONTENT === //
 .main-content {
@@ -132,12 +46,16 @@ $neat-grid-medium: (
 
 // === FOOTER === //
 footer {
-  @include grid-container;
-  @include grid-column(12);
-  padding: 0.5em 0;
   height: 50px;
   margin-top: -50px;
+  overflow: hidden;
+  border-top: 1px solid $border-color;
   font-family: $heading-font-stack;
   text-align: center;
-  border-top: 1px solid $border-color;
+}
+
+.footer-row {
+  @include grid-container;
+  @include grid-collapse;
+  padding: 0.5em 0;
 }

@@ -1,43 +1,8 @@
 // Describe layout and modules in various states (e.g. hidden, expanded, etc.)
 @import "_defaults.scss";
 
-// Links
-a:visited {
-  color: $link-base-color;
-}
-
-a:hover {
-  color: $link-hover-color;
-}
-
-a:active {
-  color: $link-active-color;
-}
-
-// Nav links
-.navbar-top ul > li {
-  a:link {
-    color: $nav-link-base-color;
-  }
-  a:hover {
-    color: $nav-link-hover-color;
-  }
-  a:active {
-    color: $nav-link-active-color;
-  }
-}
-
-.navbar-social {
-  li > a > img {
-    max-width: 24px;
-  }
-  li.linkedin:hover {
-    background: $linkedin-blue;
-  }
-  li.twitter:hover {
-    background: $twitter-blue;
-  }
-  li.goodreads:hover {
-    background: $goodreads-tan;
-  }
+/* === NAVIGATION STATE === */
+// Mobile nav toggle display
+.nav-is-expanded {
+  display: block !important;
 }

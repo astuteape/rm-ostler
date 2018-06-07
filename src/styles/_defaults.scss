@@ -1,5 +1,46 @@
 // === Defaults/resets === //
 
+//=== COLOR RULES === //
+// Color blocks
+// Main navigation pages
+$home-block: #bbdee3;
+$about-block: #fff;
+$clips-block: #fff;
+
+// Main theme colors
+$border-color: rgba(120, 120, 120, 0.66);
+$border-color-dark: #000;
+$theme-darkest: #000;
+$theme-lightest: #fff;
+
+// Book detail pages
+$splendiferous-block: $home-block;
+$founding-grammars-block: #a65e13;
+$slinging-mud-block: #906d99;
+$talk-turkey-block: #078cb0;
+$dewdroppers-block: #aa6e6d;
+
+// Link colors
+$link-base-color: #4b84ff;
+$link-hover-color: #000;
+$link-active-color: #000;
+
+// Text colors
+$text-color: #000;
+$text-color-inverse: #fff;
+
+// Nav link colors
+$nav-link-base-color: #000;
+$nav-link-hover-color: rgb(115, 115, 115);
+$nav-link-active-color: rgb(115, 115, 115);
+
+// Social colors
+$linkedin-blue: #0077b5;
+$twitter-blue: #1da1f2;
+$goodreads-tan: #f4f1ea;
+/* === END COLOR RULES === */
+
+// Resets and base styles
 $base-font-size: 16px;
 
 html,
@@ -33,6 +74,18 @@ a:link {
   margin: 0;
   padding: 0;
   text-decoration: none;
+}
+
+a:visited {
+  color: $link-base-color;
+}
+
+a:hover {
+  color: $link-hover-color;
+}
+
+a:active {
+  color: $link-active-color;
 }
 
 ul {
@@ -127,40 +180,3 @@ body {
   @include heading-size(3em, 0.8);
   font-family: $body-font-stack;
 }
-
-//=== COLOR RULES === //
-// Color blocks
-// Main navigation pages
-$home-block: #bbdee3;
-$about-block: #fff;
-$clips-block: #fff;
-
-// Main theme colors
-$border-color: rgba(120, 120, 120, 0.66);
-$border-color-dark: #000;
-
-// Book detail pages
-$splendiferous-block: $home-block;
-$founding-grammars-block: #a65e13;
-$slinging-mud-block: #906d99;
-$talk-turkey-block: #078cb0;
-$dewdroppers-block: #aa6e6d;
-
-// Link colors
-$link-base-color: #4b84ff;
-$link-hover-color: #000;
-$link-active-color: #000;
-
-// Text colors
-$text-color: #000;
-$text-color-inverse: #fff;
-
-// Nav link colors
-$nav-link-base-color: #000;
-$nav-link-hover-color: rgb(115, 115, 115);
-$nav-link-active-color: rgb(115, 115, 115);
-
-// Social colors
-$linkedin-blue: #0077b5;
-$twitter-blue: #1da1f2;
-$goodreads-tan: #f4f1ea;
