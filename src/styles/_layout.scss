@@ -7,19 +7,19 @@
 $neat-grid: (
   media: "screen and (max-width: 767px)",
   columns: 1,
-  gutter: 0.25rem
+  gutter: 1rem
 );
 
 $neat-grid-medium: (
   media: "screen and (min-width: 768px)",
   columns: 6,
-  gutter: 0.55rem
+  gutter: 1rem
 );
 
 $neat-grid-large: (
   media: "screen and (min-width: 1024px)",
   columns: 12,
-  gutter: 1rem
+  gutter: 1.25rem
 );
 
 // === MAIN CONTENT === //
@@ -28,6 +28,7 @@ $neat-grid-large: (
   max-width: 100%;
   min-height: 100%;
   overflow: hidden;
+  padding-bottom: 150px;
 
   @include grid-media($neat-grid-medium) {
     @include grid-container($neat-grid-medium);
@@ -39,21 +40,14 @@ $neat-grid-large: (
 }
 
 .main-content-wrapper {
-  @include grid-visual(rgb(5, 94, 52));
-  @include grid-collapse;
   height: 100%;
-  padding-bottom: 50px;
 
   @include grid-media($neat-grid-medium) {
-    @include grid-visual(pink);
     @include grid-collapse;
-    @include grid-container($neat-grid-medium);
   }
 
   @include grid-media($neat-grid-large) {
-    @include grid-visual(purple);
     @include grid-collapse;
-    @include grid-container($neat-grid-large);
   }
 }
 
