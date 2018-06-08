@@ -4,7 +4,7 @@ import "./styles/index.scss";
 
 // Navigation menu
 const navMobileButton = document.getElementById("nav-mobile-menu");
-const navLinkContainer = document.getElementById("nav-link-container");
+const navLinkContainer = document.getElementById("nav-link-wrapper");
 
 navMobileButton.addEventListener("click", () => {
   navLinkContainer.classList.contains("nav-is-expanded")

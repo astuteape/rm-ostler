@@ -1,47 +1,60 @@
 // Divide the page into sections that hold modules
 // Using Bourbon Neat grid
-
 @import "../../node_modules/bourbon/core/bourbon";
 @import "../../node_modules/bourbon-neat/core/neat";
 
-// Grids defined mobile first rather than with standard Neat docs examples
+// Grids defined mobile first
 $neat-grid: (
-  columns: 2,
-  gutter: 5px
+  media: "screen and (max-width: 767px)",
+  columns: 1,
+  gutter: 0.25rem
 );
 
 $neat-grid-medium: (
-  media: "only screen and (min-width: 600px)",
+  media: "screen and (min-width: 768px)",
   columns: 6,
-  gutter: 10px
+  gutter: 0.55rem
 );
 
 $neat-grid-large: (
-  media: "only screen and (min-width: 900px)",
-  columns: 6,
-  gutter: 10px
-);
-
-$neat-grid-xlarge: (
-  media: "only screen and (min-width: 1024px)",
+  media: "screen and (min-width: 1024px)",
   columns: 12,
-  gutter: 20px
+  gutter: 1rem
 );
-
-/* === HEADER SECTION: ALL RULES IN MODULES */
 
 // === MAIN CONTENT === //
 .main-content {
   @include grid-container;
-  width: 100%;
+  max-width: 100%;
   min-height: 100%;
   overflow: hidden;
+
+  @include grid-media($neat-grid-medium) {
+    @include grid-container($neat-grid-medium);
+  }
+
+  @include grid-media($neat-grid-large) {
+    @include grid-container($neat-grid-large);
+  }
 }
 
-.main-content-row {
-  @include grid-container;
+.main-content-wrapper {
+  @include grid-visual(rgb(5, 94, 52));
   @include grid-collapse;
+  height: 100%;
   padding-bottom: 50px;
+
+  @include grid-media($neat-grid-medium) {
+    @include grid-visual(pink);
+    @include grid-collapse;
+    @include grid-container($neat-grid-medium);
+  }
+
+  @include grid-media($neat-grid-large) {
+    @include grid-visual(purple);
+    @include grid-collapse;
+    @include grid-container($neat-grid-large);
+  }
 }
 
 // === FOOTER === //
@@ -54,8 +67,6 @@ footer {
   text-align: center;
 }
 
-.footer-row {
-  @include grid-container;
-  @include grid-collapse;
+.footer-content-wrapper {
   padding: 0.5em 0;
 }
