@@ -8,10 +8,11 @@ $about-block: #fff;
 $clips-block: #fff;
 
 // Main theme colors
-$border-color: rgba(120, 120, 120, 0.66);
 $border-color-dark: #000;
 $theme-darkest: #000;
 $theme-lightest: #fff;
+$border-color: rgba(120, 120, 120, 0.66);
+$shadow-color: rgba(0, 0, 0, 0.66);
 
 // Book detail pages
 $splendiferous-color: #bbdee3;
@@ -83,7 +84,7 @@ a:visited {
 
 a:hover {
   color: $link-hover-color;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:active {

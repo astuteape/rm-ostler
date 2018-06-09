@@ -140,12 +140,17 @@
 .subtitle {
   text-align: center;
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* === END HEADER MODULES === */
 
 /* === MAIN CONTENT MODULES === */
+/* === HOME PAGE === */
+
+/* === ABOUT PAGE === */
+/* === BOOKS PAGE === */
+/* === CLIPS PAGE === */
 
 /* === BOOK DETAIL PAGES === */
 .book-detail .main-book-image-wrapper {
@@ -159,22 +164,31 @@
   }
 
   @include grid-media($neat-grid-large) {
-    @include grid-column(4);
-    @include grid-shift(2);
+    @include grid-column(3);
+    @include grid-shift(1.33);
     margin-bottom: 0;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 }
 
 .book-detail .main-book-image {
+  width: 200px;
+  background: $theme-lightest;
   border: double $theme-darkest;
-  box-shadow: 0.33rem 0.33rem 0 rgba(0, 0, 0, 0.66);
+  box-shadow: 0.33rem 0.33rem 0 $shadow-color;
+
+  @include grid-media($neat-grid-large) {
+    width: 400px;
+    height: auto;
+  }
 }
 
 .book-detail .main-text-wrapper {
   @include grid-column(1);
+  box-sizing: border-box;
+  margin-top: 1rem;
   padding-top: 1rem;
-  background: $home-block;
+  outline: double $theme-darkest;
 
   @include grid-media($neat-grid-medium) {
     @include grid-column(5);
@@ -182,7 +196,7 @@
   }
 
   @include grid-media($neat-grid-large) {
-    @include grid-column(8);
+    @include grid-column(9);
   }
 
   // Page specific color override
@@ -206,7 +220,7 @@
 .book-detail .main-text {
   @include grid-column(0.75 of 1);
   @include grid-push(0.125 of 1);
-  margin-top: 8.33rem;
+  margin-top: 6.33rem;
 
   @include grid-media($neat-grid-medium) {
     @include grid-column(4 of 5);
@@ -226,16 +240,20 @@
   padding: 0.75rem;
 
   &.blurb {
-    font-size: 1.25rem;
+    @include grid-media($neat-grid-large) {
+      padding-top: 0.75rem;
+    }
   }
 
   &.review {
+    font-size: 0.9rem;
     text-indent: 0;
   }
 }
 
-.book-detail .main-text hr {
+.book-detail hr {
   height: 30px;
+  margin-bottom: -15px;
   border-style: solid;
   border-width: 1px 0 0 0;
   border-radius: 20px;

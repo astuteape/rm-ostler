@@ -24,31 +24,29 @@ $neat-grid-large: (
 
 // === MAIN CONTENT === //
 .main-content {
+  // @include grid-visual(lime);
   @include grid-container;
   max-width: 100%;
   min-height: 100%;
   overflow: hidden;
+  margin: 0 auto;
   padding-bottom: 150px;
 
   @include grid-media($neat-grid-medium) {
+    // @include grid-visual(lime);
     @include grid-container($neat-grid-medium);
+    max-width: 768px;
   }
 
   @include grid-media($neat-grid-large) {
+    // @include grid-visual(lime);
     @include grid-container($neat-grid-large);
+    max-width: 1200px;
   }
 }
 
 .main-content-wrapper {
   height: 100%;
-
-  @include grid-media($neat-grid-medium) {
-    @include grid-collapse;
-  }
-
-  @include grid-media($neat-grid-large) {
-    @include grid-collapse;
-  }
 }
 
 // === FOOTER === //
