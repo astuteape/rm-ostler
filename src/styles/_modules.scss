@@ -146,7 +146,9 @@
 /* === END HEADER MODULES === */
 
 /* === MAIN CONTENT MODULES === */
-.main-book-image-wrapper {
+
+/* === BOOK DETAIL PAGES === */
+.book-detail .main-book-image-wrapper {
   position: relative;
   @include grid-column(1);
   margin-bottom: -8.33rem;
@@ -164,12 +166,12 @@
   }
 }
 
-.main-book-image {
+.book-detail .main-book-image {
   border: double $theme-darkest;
   box-shadow: 0.33rem 0.33rem 0 rgba(0, 0, 0, 0.66);
 }
 
-.main-text-wrapper {
+.book-detail .main-text-wrapper {
   @include grid-column(1);
   padding-top: 1rem;
   background: $home-block;
@@ -201,7 +203,7 @@
   }
 }
 
-.main-text {
+.book-detail .main-text {
   @include grid-column(0.75 of 1);
   @include grid-push(0.125 of 1);
   margin-top: 8.33rem;
@@ -218,7 +220,7 @@
   }
 }
 
-.main-text p {
+.book-detail .main-text p {
   text-align: left;
   margin: 0.25rem;
   padding: 0.75rem;
@@ -232,7 +234,7 @@
   }
 }
 
-.main-text hr {
+.book-detail .main-text hr {
   height: 30px;
   border-style: solid;
   border-width: 1px 0 0 0;
@@ -266,7 +268,7 @@
   }
 }
 
-.main-buy-wrapper {
+.book-detail .main-buy-wrapper {
   @include grid-column(0.75 of 1);
   @include grid-push(0.125 of 1);
   margin-top: 1rem;
@@ -284,11 +286,11 @@
   }
 }
 
-.main-buy-wrapper h4 {
+.book-detail .main-buy-wrapper h4 {
   margin: 0 auto;
 }
 
-.main-buy-links {
+.book-detail .main-buy-links {
   li {
     display: inline-block;
     margin: 0.5rem;
