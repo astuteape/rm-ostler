@@ -131,16 +131,19 @@
 /* === END NAV STYLES === */
 
 .page-title {
-  @include grid-container;
   margin-bottom: 0;
   padding: 0.5rem;
   text-align: center;
 }
 
 .subtitle {
+  max-width: 768px;
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
+
+  @include grid-media($neat-grid-large) {
+    max-width: 1024px;
+  }
 }
 
 /* === END HEADER MODULES === */
@@ -149,8 +152,85 @@
 /* === HOME PAGE === */
 
 /* === ABOUT PAGE === */
+
 /* === BOOKS PAGE === */
-/* === CLIPS PAGE === */
+.books .book-preview-wrapper {
+  @include grid-column(1);
+  box-sizing: border-box;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: all 750ms ease-in-out;
+
+  @include grid-media($neat-grid-medium) {
+    @include grid-column(3);
+    &:nth-child(2n + 1) {
+      clear: left;
+    }
+    &:last-child {
+      @include grid-push(1.5);
+    }
+  }
+
+  @include grid-media($neat-grid-large) {
+    @include grid-column(4);
+    &:nth-child(2n + 1) {
+      clear: none;
+    }
+    &:nth-child(3n + 1) {
+      clear: left;
+    }
+    &:nth-child(4) {
+      @include grid-push(2);
+    }
+    &:last-child {
+      @include grid-push(0);
+    }
+  }
+}
+
+.books .book-preview-wrapper:hover {
+  // Page specific color override
+  &.splendiferous {
+    background: $splendiferous-color;
+  }
+  &.founding {
+    background: $founding-color;
+  }
+  &.slinging {
+    background: $slinging-color;
+  }
+  &.turkey {
+    background: $turkey-color;
+  }
+  &.dewdroppers {
+    background: $dewdroppers-color;
+  }
+}
+
+.book-preview-image {
+  display: block;
+  box-sizing: border-box;
+  min-width: 200px;
+  margin: 0 auto 1rem auto;
+  border: double $theme-darkest;
+  box-shadow: 0.33rem 0.33rem 0 $shadow-color;
+}
+
+.book-preview-text-wrapper {
+  padding: 0 1rem;
+}
+
+.book-preview-text-wrapper button {
+  display: block;
+  width: 50%;
+  min-height: 2rem;
+  margin: 0 auto;
+  background: $theme-lightest;
+  border: double $theme-darkest;
+  border-radius: 3px;
+  text-align: center;
+}
 
 /* === BOOK DETAIL PAGES === */
 .book-detail .main-book-image-wrapper {
@@ -165,7 +245,8 @@
 
   @include grid-media($neat-grid-large) {
     @include grid-column(3);
-    @include grid-shift(1.33);
+    @include grid-shift(0.75);
+    z-index: 1;
     margin-bottom: 0;
     margin-top: 3rem;
   }
@@ -178,7 +259,7 @@
   box-shadow: 0.33rem 0.33rem 0 $shadow-color;
 
   @include grid-media($neat-grid-large) {
-    width: 400px;
+    min-width: 270px;
     height: auto;
   }
 }
@@ -188,7 +269,7 @@
   box-sizing: border-box;
   margin-top: 1rem;
   padding-top: 1rem;
-  outline: double $theme-darkest;
+  border-radius: 7px;
 
   @include grid-media($neat-grid-medium) {
     @include grid-column(5);
@@ -197,10 +278,11 @@
 
   @include grid-media($neat-grid-large) {
     @include grid-column(9);
+    @include grid-shift(-0.75);
   }
 
   // Page specific color override
-  &.splendiferious {
+  &.splendiferous {
     background: $splendiferous-color;
   }
   &.founding {
@@ -269,7 +351,7 @@
   }
 
   // Page specific color override
-  &.splendiferious {
+  &.splendiferous {
     color: lighten($splendiferous-color, 20%);
   }
   &.founding {
@@ -314,6 +396,8 @@
     margin: 0.5rem;
   }
 }
+
+/* === CLIPS PAGE === */
 
 /* === FOOTER MODULES === */
 .copyright {

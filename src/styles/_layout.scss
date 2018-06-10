@@ -30,7 +30,7 @@ $neat-grid-large: (
   min-height: 100%;
   overflow: hidden;
   margin: 0 auto;
-  padding-bottom: 150px;
+  padding-bottom: 75px;
 
   @include grid-media($neat-grid-medium) {
     // @include grid-visual(lime);

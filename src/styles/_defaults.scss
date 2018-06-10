@@ -1,5 +1,10 @@
 // === Defaults/resets === //
 
+// === Prevent animation on load === //
+.preload * {
+  transition: none !important;
+}
+
 //=== COLOR RULES === //
 // Color blocks
 // Main navigation pages
