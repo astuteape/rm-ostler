@@ -151,10 +151,9 @@
 /* === MAIN CONTENT MODULES === */
 /* === HOME PAGE === */
 
-/* === ABOUT PAGE === */
-
-/* === BOOKS PAGE === */
-.books .book-preview-wrapper {
+/* === BOOKS AND CLIPS PAGES === */
+.books .book-preview-wrapper,
+.clips .clip-preview-wrapper {
   @include grid-column(1);
   box-sizing: border-box;
   margin-top: 1.5rem;
@@ -167,7 +166,7 @@
     &:nth-child(2n + 1) {
       clear: left;
     }
-    &:last-child {
+    &:nth-child(2n + 1):last-child {
       @include grid-push(1.5);
     }
   }
@@ -177,14 +176,17 @@
     &:nth-child(2n + 1) {
       clear: none;
     }
+    &:nth-child(2n + 1):last-child {
+      @include grid-push(0);
+    }
     &:nth-child(3n + 1) {
       clear: left;
     }
-    &:nth-child(4) {
+    &:nth-child(3n + 1):nth-last-child(2) {
       @include grid-push(2);
     }
-    &:last-child {
-      @include grid-push(0);
+    &:nth-child(3n + 1):last-child {
+      @include grid-push(4);
     }
   }
 }
@@ -192,23 +194,28 @@
 .books .book-preview-wrapper:hover {
   // Page specific color override
   &.splendiferous {
-    background: $splendiferous-color;
+    background: $splendiferous-bg-color;
   }
   &.founding {
-    background: $founding-color;
+    background: $founding-bg-color;
   }
   &.slinging {
-    background: $slinging-color;
+    background: $slinging-bg-color;
   }
   &.turkey {
-    background: $turkey-color;
+    background: $turkey-bg-color;
   }
   &.dewdroppers {
-    background: $dewdroppers-color;
+    background: $dewdroppers-bg-color;
   }
 }
 
-.book-preview-image {
+.clips .clip-preview-wrapper:hover {
+  background: $clips-bg-color;
+}
+
+.book-preview-image,
+.clip-preview-image {
   display: block;
   box-sizing: border-box;
   min-width: 200px;
@@ -217,11 +224,13 @@
   box-shadow: 0.33rem 0.33rem 0 $shadow-color;
 }
 
-.book-preview-text-wrapper {
+.book-preview-text-wrapper,
+.clip-preview-text-wrapper {
   padding: 0 1rem;
 }
 
-.book-preview-text-wrapper button {
+.book-preview-text-wrapper button,
+.clip-preview-text-wrapper button {
   display: block;
   width: 50%;
   min-height: 2rem;
@@ -232,7 +241,8 @@
   text-align: center;
 }
 
-/* === BOOK DETAIL PAGES === */
+/* === ABOUT AND BOOK DETAIL PAGES === */
+.about .main-about-image-wrapper,
 .book-detail .main-book-image-wrapper {
   position: relative;
   @include grid-column(1);
@@ -252,6 +262,7 @@
   }
 }
 
+.about .main-about-image,
 .book-detail .main-book-image {
   width: 200px;
   background: $theme-lightest;
@@ -264,6 +275,7 @@
   }
 }
 
+.about .main-text-wrapper,
 .book-detail .main-text-wrapper {
   @include grid-column(1);
   box-sizing: border-box;
@@ -282,23 +294,27 @@
   }
 
   // Page specific color override
+  &.about {
+    background: $about-bg-color;
+  }
   &.splendiferous {
-    background: $splendiferous-color;
+    background: $splendiferous-bg-color;
   }
   &.founding {
-    background: $founding-color;
+    background: $founding-bg-color;
   }
   &.slinging {
-    background: $slinging-color;
+    background: $slinging-bg-color;
   }
   &.turkey {
-    background: $turkey-color;
+    background: $turkey-bg-color;
   }
   &.dewdroppers {
-    background: $dewdroppers-color;
+    background: $dewdroppers-bg-color;
   }
 }
 
+.about .main-text,
 .book-detail .main-text {
   @include grid-column(0.75 of 1);
   @include grid-push(0.125 of 1);
@@ -316,6 +332,7 @@
   }
 }
 
+.about .main-text p,
 .book-detail .main-text p {
   text-align: left;
   margin: 0.25rem;
@@ -333,6 +350,7 @@
   }
 }
 
+.about hr,
 .book-detail hr {
   height: 30px;
   margin-bottom: -15px;
@@ -351,23 +369,27 @@
   }
 
   // Page specific color override
+  &.about {
+    color: lighten($about-bg-color, 20%);
+  }
   &.splendiferous {
-    color: lighten($splendiferous-color, 20%);
+    color: lighten($splendiferous-bg-color, 20%);
   }
   &.founding {
-    color: lighten($founding-color, 20%);
+    color: lighten($founding-bg-color, 20%);
   }
   &.slinging {
-    color: lighten($slinging-color, 20%);
+    color: lighten($slinging-bg-color, 20%);
   }
   &.turkey {
-    color: lighten($turkey-color, 20%);
+    color: lighten($turkey-bg-color, 20%);
   }
   &.dewdroppers {
-    color: lighten($dewdroppers-color, 20%);
+    color: lighten($dewdroppers-bg-color, 20%);
   }
 }
 
+.about .main-contact-wrapper,
 .book-detail .main-buy-wrapper {
   @include grid-column(0.75 of 1);
   @include grid-push(0.125 of 1);
@@ -386,10 +408,12 @@
   }
 }
 
+.about .main-contact-wrapper h4,
 .book-detail .main-buy-wrapper h4 {
   margin: 0 auto;
 }
 
+.about .main-contact-wrapper,
 .book-detail .main-buy-links {
   li {
     display: inline-block;
