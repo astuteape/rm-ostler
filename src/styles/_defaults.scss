@@ -169,6 +169,14 @@ p {
   text-indent: 1em;
 }
 
+svg {
+  fill: $theme-darkest;
+
+  &:hover {
+    fill: $theme-lightest;
+  }
+}
+
 $heading-font-stack: "Kaushan Script", cursive;
 $body-font-stack: "Pavanam", sans-serif;
 

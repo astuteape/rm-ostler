@@ -21,7 +21,7 @@
   background: $theme-darkest;
   color: $theme-lightest;
   text-align: left;
-  font-size: 1em;
+  font-size: 1.33rem;
 
   @include grid-media($neat-grid-large) {
     display: none;
@@ -150,6 +150,15 @@
 
 /* === MAIN CONTENT MODULES === */
 /* === HOME PAGE === */
+.book-detail .main-text {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+}
 
 /* === BOOKS AND CLIPS PAGES === */
 .books .book-preview-wrapper,
@@ -418,6 +427,34 @@
   li {
     display: inline-block;
     margin: 0.5rem;
+  }
+  span {
+    display: block;
+  }
+}
+
+.about .main-text {
+  a,
+  a:visited {
+    color: lighten($about-bg-color, 20%);
+  }
+
+  a:hover {
+    color: $theme-lightest;
+  }
+}
+
+.about .main-contact-wrapper {
+  a span {
+    color: $theme-darkest;
+  }
+  li:hover {
+    a svg {
+      fill: lighten($about-bg-color, 25%);
+    }
+    a span {
+      color: lighten($about-bg-color, 25%);
+    }
   }
 }
 
