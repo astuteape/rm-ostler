@@ -2,6 +2,11 @@
 
 import "./styles/index.scss";
 
+// Prevent CSS animations on load
+window.onload = () => {
+  body[0].classList.remove("is-preloading");
+};
+
 // Navigation menu
 const body = document.getElementsByTagName("body");
 const navMobileButton = document.getElementById("nav-mobile-menu");
@@ -12,11 +17,6 @@ navMobileButton.addEventListener("click", () => {
     ? navLinkContainer.classList.remove("nav-is-expanded")
     : navLinkContainer.classList.add("nav-is-expanded");
 });
-
-// Prevent CSS animations on load
-window.onload = () => {
-  body[0].classList.remove("preload");
-};
 
 // Copyright date
 let yearString = new Date().getFullYear().toString();

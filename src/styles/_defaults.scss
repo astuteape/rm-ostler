@@ -1,10 +1,5 @@
 // === Defaults/resets === //
 
-// === Prevent animation on load === //
-.preload * {
-  transition: none !important;
-}
-
 //=== COLOR RULES === //
 // Color blocks
 // Main navigation pages
@@ -44,6 +39,26 @@ $nav-link-active-color: rgb(115, 115, 115);
 $linkedin-blue: #0077b5;
 $twitter-blue: #1da1f2;
 $goodreads-brown: #624234;
+
+@mixin colorDecorator($color) {
+  background-color: $color;
+
+  a {
+    color: lighten($color, 20%);
+
+    &:hover {
+      color: $theme-lightest;
+    }
+  }
+
+  svg {
+    fill: lighten($color, 20%);
+
+    &:hover {
+      fill: $theme-lightest;
+    }
+  }
+}
 /* === END COLOR RULES === */
 
 // Resets and base styles

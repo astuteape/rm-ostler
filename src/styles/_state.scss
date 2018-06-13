@@ -1,7 +1,11 @@
 // Describe layout and modules in various states (e.g. hidden, expanded, etc.)
 @import "_defaults.scss";
 
-/* === NAVIGATION STATE === */
+// Prevent animation on load
+.is-preloading {
+  transition: none !important;
+}
+
 // Mobile nav toggle display
 .nav-is-expanded {
   display: block !important;

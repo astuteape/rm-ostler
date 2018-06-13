@@ -145,24 +145,11 @@
     max-width: 1024px;
   }
 }
-
 /* === END HEADER MODULES === */
 
 /* === MAIN CONTENT MODULES === */
-/* === HOME PAGE === */
-.book-detail .main-text {
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-align: center;
-  }
-}
-
-/* === BOOKS AND CLIPS PAGES === */
-.books .book-preview-wrapper,
-.clips .clip-preview-wrapper {
+/* === BOOKS AND CLIPS PAGES USE COLLECTION LAYOUT === */
+.collection-item-wrapper {
   @include grid-column(1);
   box-sizing: border-box;
   margin-top: 1.5rem;
@@ -177,6 +164,24 @@
     }
     &:nth-child(2n + 1):last-child {
       @include grid-push(1.5);
+    }
+
+    &:hover {
+      &.splendiferous {
+        @include colorDecorator($splendiferous-bg-color);
+      }
+      &.founding {
+        @include colorDecorator($founding-bg-color);
+      }
+      &.slinging {
+        @include colorDecorator($slinging-bg-color);
+      }
+      &.turkey {
+        @include colorDecorator($turkey-bg-color);
+      }
+      &.dewdroppers {
+        @include colorDecorator($dewdroppers-bg-color);
+      }
     }
   }
 
@@ -200,31 +205,7 @@
   }
 }
 
-.books .book-preview-wrapper:hover {
-  // Page specific color override
-  &.splendiferous {
-    background: $splendiferous-bg-color;
-  }
-  &.founding {
-    background: $founding-bg-color;
-  }
-  &.slinging {
-    background: $slinging-bg-color;
-  }
-  &.turkey {
-    background: $turkey-bg-color;
-  }
-  &.dewdroppers {
-    background: $dewdroppers-bg-color;
-  }
-}
-
-.clips .clip-preview-wrapper:hover {
-  background: $clips-bg-color;
-}
-
-.book-preview-image,
-.clip-preview-image {
+.collection-item img {
   display: block;
   box-sizing: border-box;
   min-width: 200px;
@@ -233,13 +214,11 @@
   box-shadow: 0.33rem 0.33rem 0 $shadow-color;
 }
 
-.book-preview-text-wrapper,
-.clip-preview-text-wrapper {
+.collection-item-text-wrapper {
   padding: 0 1rem;
 }
 
-.book-preview-text-wrapper button,
-.clip-preview-text-wrapper button {
+.collection-item button {
   display: block;
   width: 50%;
   min-height: 2rem;
@@ -248,11 +227,11 @@
   border: double $theme-darkest;
   border-radius: 3px;
   text-align: center;
+  cursor: pointer;
 }
 
-/* === ABOUT AND BOOK DETAIL PAGES === */
-.about .main-about-image-wrapper,
-.book-detail .main-book-image-wrapper {
+/* === HOME, ABOUT, AND BOOK DETAIL PAGES USE FEATURE LAYOUT === */
+.feature-image-wrapper {
   position: relative;
   @include grid-column(1);
   margin-bottom: -8.33rem;
@@ -271,8 +250,7 @@
   }
 }
 
-.about .main-about-image,
-.book-detail .main-book-image {
+.feature-image {
   width: 200px;
   background: $theme-lightest;
   border: double $theme-darkest;
@@ -284,8 +262,7 @@
   }
 }
 
-.about .main-text-wrapper,
-.book-detail .main-text-wrapper {
+.feature-text-wrapper {
   @include grid-column(1);
   box-sizing: border-box;
   margin-top: 1rem;
@@ -302,29 +279,27 @@
     @include grid-shift(-0.75);
   }
 
-  // Page specific color override
   &.about {
-    background: $about-bg-color;
+    @include colorDecorator($about-bg-color);
   }
   &.splendiferous {
-    background: $splendiferous-bg-color;
+    @include colorDecorator($splendiferous-bg-color);
   }
   &.founding {
-    background: $founding-bg-color;
+    @include colorDecorator($founding-bg-color);
   }
   &.slinging {
-    background: $slinging-bg-color;
+    @include colorDecorator($slinging-bg-color);
   }
   &.turkey {
-    background: $turkey-bg-color;
+    @include colorDecorator($turkey-bg-color);
   }
   &.dewdroppers {
-    background: $dewdroppers-bg-color;
+    @include colorDecorator($dewdroppers-bg-color);
   }
 }
 
-.about .main-text,
-.book-detail .main-text {
+.feature-text {
   @include grid-column(0.75 of 1);
   @include grid-push(0.125 of 1);
   margin-top: 6.33rem;
@@ -341,8 +316,15 @@
   }
 }
 
-.about .main-text p,
-.book-detail .main-text p {
+.feature-text h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
+.feature-text p {
   text-align: left;
   margin: 0.25rem;
   padding: 0.75rem;
@@ -359,8 +341,9 @@
   }
 }
 
-.about hr,
-.book-detail hr {
+.feature-text hr,
+.feature-contact-wrapper hr,
+.feature-buy-wrapper hr {
   height: 30px;
   margin-bottom: -15px;
   border-style: solid;
@@ -376,8 +359,6 @@
     border-width: 0 0 1px 0;
     border-radius: 20px;
   }
-
-  // Page specific color override
   &.about {
     color: lighten($about-bg-color, 20%);
   }
@@ -398,8 +379,8 @@
   }
 }
 
-.about .main-contact-wrapper,
-.book-detail .main-buy-wrapper {
+.feature-contact-wrapper,
+.feature-buy-wrapper {
   @include grid-column(0.75 of 1);
   @include grid-push(0.125 of 1);
   margin-top: 1rem;
@@ -417,13 +398,13 @@
   }
 }
 
-.about .main-contact-wrapper h4,
-.book-detail .main-buy-wrapper h4 {
+.feature-contact-wrapper h4,
+.feature-buy-wrapper h4 {
   margin: 0 auto;
 }
 
-.about .main-contact-wrapper,
-.book-detail .main-buy-links {
+.feature-contact-links,
+.feature-buy-links {
   li {
     display: inline-block;
     margin: 0.5rem;
@@ -432,33 +413,6 @@
     display: block;
   }
 }
-
-.about .main-text {
-  a,
-  a:visited {
-    color: lighten($about-bg-color, 20%);
-  }
-
-  a:hover {
-    color: $theme-lightest;
-  }
-}
-
-.about .main-contact-wrapper {
-  a span {
-    color: $theme-darkest;
-  }
-  li:hover {
-    a svg {
-      fill: lighten($about-bg-color, 25%);
-    }
-    a span {
-      color: lighten($about-bg-color, 25%);
-    }
-  }
-}
-
-/* === CLIPS PAGE === */
 
 /* === FOOTER MODULES === */
 .copyright {

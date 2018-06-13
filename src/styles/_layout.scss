@@ -33,13 +33,11 @@ $neat-grid-large: (
   padding-bottom: 75px;
 
   @include grid-media($neat-grid-medium) {
-    // @include grid-visual(lime);
     @include grid-container($neat-grid-medium);
     max-width: 768px;
   }
 
   @include grid-media($neat-grid-large) {
-    // @include grid-visual(lime);
     @include grid-container($neat-grid-large);
     max-width: 1200px;
   }
