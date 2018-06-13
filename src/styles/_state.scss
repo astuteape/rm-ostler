@@ -2,7 +2,7 @@
 @import "_defaults.scss";
 
 // Prevent animation on load
-.is-preloading {
+.is-preloading * {
   transition: none !important;
 }
 

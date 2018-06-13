@@ -5,7 +5,7 @@
 // Main navigation pages
 $home-bg-color: #bbdee3;
 $about-bg-color: #f58684;
-$clips-bg-color: #60d3a5;
+$clip-bg-color: #556459;
 
 // Main theme colors
 $border-color-dark: #000;
@@ -40,11 +40,11 @@ $linkedin-blue: #0077b5;
 $twitter-blue: #1da1f2;
 $goodreads-brown: #624234;
 
-@mixin colorDecorator($color) {
+@mixin colorDecorator($color, $lightness) {
   background-color: $color;
 
   a {
-    color: lighten($color, 20%);
+    color: lighten($color, $lightness);
 
     &:hover {
       color: $theme-lightest;
@@ -52,7 +52,7 @@ $goodreads-brown: #624234;
   }
 
   svg {
-    fill: lighten($color, 20%);
+    fill: lighten($color, $lightness);
 
     &:hover {
       fill: $theme-lightest;

@@ -94,6 +94,7 @@
   padding: 1em;
   max-width: 24px;
   max-height: 24px;
+  transition: all 0.5s linear;
 
   & a > svg {
     fill: $theme-darkest;
@@ -168,19 +169,23 @@
 
     &:hover {
       &.splendiferous {
-        @include colorDecorator($splendiferous-bg-color);
+        @include colorDecorator($splendiferous-bg-color, 20%);
       }
       &.founding {
-        @include colorDecorator($founding-bg-color);
+        @include colorDecorator($founding-bg-color, 20%);
       }
       &.slinging {
-        @include colorDecorator($slinging-bg-color);
+        @include colorDecorator($slinging-bg-color, 20%);
       }
       &.turkey {
-        @include colorDecorator($turkey-bg-color);
+        @include colorDecorator($turkey-bg-color, 20%);
       }
       &.dewdroppers {
-        @include colorDecorator($dewdroppers-bg-color);
+        @include colorDecorator($dewdroppers-bg-color, 20%);
+      }
+      &.clip {
+        @include colorDecorator($clip-bg-color, 50%);
+        color: lighten($clip-bg-color, 50%);
       }
     }
   }
@@ -208,7 +213,8 @@
 .collection-item img {
   display: block;
   box-sizing: border-box;
-  min-width: 200px;
+  width: 200px;
+  height: auto;
   margin: 0 auto 1rem auto;
   border: double $theme-darkest;
   box-shadow: 0.33rem 0.33rem 0 $shadow-color;
@@ -216,6 +222,15 @@
 
 .collection-item-text-wrapper {
   padding: 0 1rem;
+}
+
+.collection-item h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .collection-item button {
@@ -280,22 +295,22 @@
   }
 
   &.about {
-    @include colorDecorator($about-bg-color);
+    @include colorDecorator($about-bg-color, 20%);
   }
   &.splendiferous {
-    @include colorDecorator($splendiferous-bg-color);
+    @include colorDecorator($splendiferous-bg-color, 20%);
   }
   &.founding {
-    @include colorDecorator($founding-bg-color);
+    @include colorDecorator($founding-bg-color, 20%);
   }
   &.slinging {
-    @include colorDecorator($slinging-bg-color);
+    @include colorDecorator($slinging-bg-color, 20%);
   }
   &.turkey {
-    @include colorDecorator($turkey-bg-color);
+    @include colorDecorator($turkey-bg-color, 20%);
   }
   &.dewdroppers {
-    @include colorDecorator($dewdroppers-bg-color);
+    @include colorDecorator($dewdroppers-bg-color, 20%);
   }
 }
 
@@ -326,8 +341,12 @@ h6 {
 
 .feature-text p {
   text-align: left;
-  margin: 0.25rem;
-  padding: 0.75rem;
+  margin: 0.25rem 0rem;
+  padding: 0.75rem 0rem;
+
+  @include grid-media($neat-grid-medium) {
+    padding: 1rem;
+  }
 
   &.blurb {
     @include grid-media($neat-grid-large) {
