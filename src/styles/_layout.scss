@@ -23,7 +23,7 @@ $neat-grid-large: (
 );
 
 // === MAIN CONTENT === //
-.main-content {
+.l-main-content {
   // @include grid-visual(lime);
   @include grid-container;
   max-width: 100%;
@@ -43,7 +43,7 @@ $neat-grid-large: (
   }
 }
 
-.main-content-wrapper {
+.l-main-content-wrapper {
   height: 100%;
 }
 
@@ -57,6 +57,6 @@ footer {
   text-align: center;
 }
 
-.footer-content-wrapper {
+.l-footer-content-wrapper {
   padding: 0.5em 0;
 }
