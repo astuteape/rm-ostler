@@ -13,13 +13,13 @@ $neat-grid: (
 $neat-grid-medium: (
   media: "screen and (min-width: 768px)",
   columns: 6,
-  gutter: 1rem
+  gutter: 0.8rem
 );
 
 $neat-grid-large: (
   media: "screen and (min-width: 1024px)",
   columns: 12,
-  gutter: 1.25rem
+  gutter: 0.75rem
 );
 
 // === MAIN CONTENT === //
