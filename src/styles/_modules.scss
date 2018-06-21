@@ -346,16 +346,10 @@ h6 {
 .feature-text p {
   text-align: left;
   margin: 0.25rem 0rem;
-  padding: 0.75rem 0rem;
+  padding: 0.5rem 0rem;
 
   @include grid-media($neat-grid-medium) {
-    padding: 1rem;
-  }
-
-  &.blurb {
-    @include grid-media($neat-grid-large) {
-      padding-top: 0.75rem;
-    }
+    padding: 0.5rem;
   }
 
   &.review {
