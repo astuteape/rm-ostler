@@ -12,7 +12,7 @@
   }
 }
 
-.nav-mobile-menu {
+.nav-mobile-button {
   display: block;
   width: 100%;
   height: 2em;
@@ -29,11 +29,14 @@
 }
 
 .nav-link-wrapper {
-  display: none;
+  height: 0;
+  overflow: hidden;
   border-bottom: 1px solid $border-color;
+  transition: all 0.66s ease-out;
 
   @include grid-media($neat-grid-large) {
-    display: block;
+    height: auto !important;
+    overflow: auto;
     border-bottom: none;
   }
 }
