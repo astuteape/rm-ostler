@@ -3,7 +3,6 @@
 import "./styles/index.scss";
 
 // Prevent CSS animations on load
-
 window.onload = () => {
   const body = document.getElementsByTagName("body");
   body[0].classList.remove("is-preloading");
