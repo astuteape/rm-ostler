@@ -24,7 +24,6 @@ $neat-grid-large: (
 
 // === MAIN CONTENT === //
 .l-main-content {
-  // @include grid-visual(lime);
   @include grid-container;
   max-width: 100%;
   min-height: 100%;

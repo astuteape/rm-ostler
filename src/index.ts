@@ -9,7 +9,10 @@ window.onload = () => {
 };
 
 // Navigation menu
+
 // Define collapsible animation functions
+// Inspiration from Brandon Smith's CSS Tricks Post
+// https://css-tricks.com/using-css-transitions-auto-dimensions/
 const collapseSection = (element: HTMLElement) => {
   const contentHeight: number = element.scrollHeight;
   const elementTransition: string = element.style.transition;
@@ -24,7 +27,6 @@ const collapseSection = (element: HTMLElement) => {
       element.style.overflow = "hidden";
     });
   });
-
   element.setAttribute("data-collapsed", "true");
 };
 
@@ -58,6 +60,7 @@ const mobileNavButton: HTMLElement = document.querySelector(
   "#nav-mobile-button"
 );
 const navLinkWrapper: HTMLElement = document.querySelector("#nav-link-wrapper");
+
 toggleCollapse(mobileNavButton, navLinkWrapper, "click");
 
 // Copyright date
