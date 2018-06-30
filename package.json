@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --opmtimize-minimize",
-    "dev": "webpack --watch"
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack --config webpack.dev.js --watch"
   },
   "repository": {
     "type": "git",

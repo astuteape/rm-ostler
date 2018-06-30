@@ -21,12 +21,8 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
-          // fallback to style-loader in development
           {
-            loader:
-              process.env.NODE_ENV !== "production"
-                ? "style-loader"
-                : MiniCssExtractPlugin.loader
+            loader: "style-loader"
           },
           { loader: "css-loader" },
           { loader: "postcss-loader" },
