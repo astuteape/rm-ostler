@@ -1,5 +1,7 @@
 # Rosemarie Ostler
 
+This is the personal website of Rosemarie Ostler, linguist and freelance writer. This hand coded website offers a simple clean look at Rosemarie's work.
+
 ## Notes
 
 This project is developed using webpack in a non-standard way. Rather than dynamically generating HTML, the HTML pages are hand coded. Styles and JavaScript are added with tags in an _old school_ way. This is done with some specific client requirements in mind.
@@ -54,3 +56,9 @@ This project is developed using webpack in a non-standard way. Rather than dynam
 ## Installation notes
 
 Ensure that Neat is at the correct version. It was completely rewritten as of version 2.0. This project relies on Neat 2.0 or greater.
+
+## Resource Attributions
+
+- Some icons provided by Keyamoon.com via IcoMoon under CC 4.0 License
+  - [Resource and License](https://icomoon.io/#icons-icomoon)
+  - Icons modified to optimize for website. This includes simplifying and resizing the SVGs
