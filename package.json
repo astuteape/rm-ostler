@@ -9,7 +9,7 @@
     "dev": "webpack --config webpack.dev.js --watch"
   },
   "browserslist": [
-    "> 5%",
+    "> 1%",
     "not ie <=9"
   ],
   "repository": {
