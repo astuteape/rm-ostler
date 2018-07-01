@@ -6,10 +6,6 @@
   overflow: hidden;
   border-bottom: none;
   font-family: $heading-font-stack;
-
-  @include grid-media($neat-grid-large) {
-    border-bottom: 1px solid $border-color;
-  }
 }
 
 .nav-mobile-button {
@@ -37,7 +33,6 @@
   @include grid-media($neat-grid-large) {
     height: auto !important;
     overflow: auto;
-    border-bottom: none;
   }
 }
 
@@ -83,12 +78,10 @@
 .navbar-social {
   float: left;
   width: 100%;
-  border-bottom: 1px solid $border-color;
 
   @include grid-media($neat-grid-large) {
     float: right;
     width: auto;
-    border-bottom: none;
   }
 }
 
