@@ -392,6 +392,10 @@ h6 {
   }
 }
 
+.collection-item-image-wrapper {
+  min-height: 305px;
+}
+
 .collection-item img {
   display: block;
   box-sizing: border-box;
@@ -422,18 +426,31 @@ h6 {
 
 .collection-item h5.book {
   min-height: 2.4rem;
+
+  @include grid-media($neat-grid-large) {
+    min-height: 3.8rem;
+  }
 }
 
 .clip .collection-item-text-wrapper p {
-  min-height: 180px;
   max-width: 550px;
   margin: auto;
+
+  @include grid-media($neat-grid-medium) {
+    min-height: 160px;
+  }
+  @include grid-media($neat-grid-large) {
+    min-height: 180px;
+  }
 }
 
 .book .collection-item-text-wrapper p {
-  min-height: 120px;
-  max-width: 550px;
+  max-width: 450px;
   margin: auto;
+
+  @include grid-media($neat-grid-medium) {
+    min-height: 90px;
+  }
 }
 
 .collection-item-text-wrapper button {
