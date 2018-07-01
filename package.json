@@ -8,6 +8,10 @@
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack --config webpack.dev.js --watch"
   },
+  "browserslist": [
+    "> 5%",
+    "not ie <=9"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/astuteape/rm-ostler.git"
