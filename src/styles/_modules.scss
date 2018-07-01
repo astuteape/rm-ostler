@@ -262,6 +262,8 @@ h6 {
   }
 }
 
+// hr shape inspiration from:
+// https://css-tricks.com/simple-styles-for-horizontal-rules/
 .feature-text hr,
 .feature-contact-wrapper hr,
 .feature-buy-wrapper hr {
@@ -411,24 +413,34 @@ h6 {
   padding: 0 1rem;
 }
 
+// min-height of collection-item headings and paragraphs keep buttons aligned
+// without absolution positioning
 .collection-item {
   h2,
   h3,
   h4,
   h5,
   h6 {
-    min-height: 65px;
+    min-height: 3.8rem;
     text-align: center;
     margin-bottom: 0;
   }
 }
 
+.collection-item h5.book {
+  min-height: 2.4rem;
+}
+
 .clip .collection-item-text-wrapper p {
   min-height: 180px;
+  max-width: 550px;
+  margin: auto;
 }
 
 .book .collection-item-text-wrapper p {
   min-height: 120px;
+  max-width: 550px;
+  margin: auto;
 }
 
 .collection-item-text-wrapper button {

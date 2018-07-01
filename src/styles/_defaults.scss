@@ -8,7 +8,6 @@ $about-bg-color: #f58684;
 $clip-bg-color: #556459;
 
 // Main theme colors
-$border-color-dark: #000;
 $theme-darkest: #000;
 $theme-lightest: #fff;
 $border-color: rgba(120, 120, 120, 0.66);
@@ -33,7 +32,7 @@ $text-color-inverse: #fff;
 // Nav link colors
 $nav-link-base-color: #000;
 $nav-link-hover-color: rgb(115, 115, 115);
-$nav-link-active-color: rgb(115, 115, 115);
+$nav-link-active-color: #000;
 
 // Social colors
 $linkedin-blue: #0077b5;
@@ -208,7 +207,7 @@ $body-font-stack: "Pavanam", sans-serif;
 }
 
 body {
-  font-size: 18px;
+  font-size: $base-font-size;
   @include heading-size(3em, 0.8);
   font-family: $body-font-stack;
 }
